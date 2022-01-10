@@ -5,6 +5,7 @@ defmodule TutoPhoenix.Schemas.Trial do
   schema "trial" do
     field :name, :string
     belongs_to :championship, TutoPhoenix.Schemas.Championship
+    many_to_many :contenders, TutoPhoenix.Schemas.Contender, join_through: "trials_contenders"
   end
 
   def changeset(struct, params) do

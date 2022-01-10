@@ -2,7 +2,7 @@ defmodule TutoPhoenix.Schemas.Championship do
   use Ecto.Schema
   import Ecto.Changeset
 
-  schema "championship" do
+  schema "championships" do
     field :name, :string
     field :location, :string
     has_many :trials, TutoPhoenix.Schemas.Trial
