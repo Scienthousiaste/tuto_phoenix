@@ -36,6 +36,7 @@ defmodule TutoPhoenix.MixProject do
       {:phoenix, "~> 1.6.4"},
       {:phoenix_ecto, "~> 4.4"},
       {:ecto_sql, "~> 3.6"},
+      {:ecto_crux, "~> 1.2.7"},
       {:postgrex, ">= 0.0.0"},
       {:phoenix_html, "~> 3.0"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
