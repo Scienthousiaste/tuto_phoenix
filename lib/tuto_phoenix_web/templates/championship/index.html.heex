@@ -1,0 +1,12 @@
+<h1><%= @name %></h1>
+
+<%= for championship <- @collection do %>
+  <div>
+    <%= championship.name %>
+    <%= link "View", to: Routes.championship_path(@conn, :show, championship.id) %>
+  </div>
+<% end %>
+
+<%= button("New championship", to: @name<>"/new", method: :get, class: "btn") %>
+<%= link "return", to: "/" %>
+

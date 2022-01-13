@@ -1,0 +1,7 @@
+<h1><%= @name %></h1>
+
+<%= for elem <- @collection do %>
+  <div>
+    <%= elem.name %>
+  </div>
+<% end %>
