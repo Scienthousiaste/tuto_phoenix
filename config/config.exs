@@ -10,6 +10,8 @@ import Config
 config :tuto_phoenix,
   ecto_repos: [TutoPhoenix.Repo]
 
+config :ecto_crux, repo: TutoPhoenix.Repo
+
 # Configures the endpoint
 config :tuto_phoenix, TutoPhoenixWeb.Endpoint,
   url: [host: "localhost"],

@@ -14,11 +14,24 @@ defmodule TutoPhoenixWeb.Router do
     plug :accepts, ["json"]
   end
 
+
+  # scope "/championships", TutoPhoenixWeb do
+  #   pipe_through :browser
+
+  #   get "/", ChampionshipController, :index
+  #   get "/:id". ChampionshipController, :show
+  # end
+
   scope "/", TutoPhoenixWeb do
     pipe_through :browser
 
+    resources "/championships", ChampionshipController, only: [:index, :show, :new, :create]
+    resources "/trials", TrialController, only: [:index, :show, :new, :create]
+    resources "/contenders", ContenderController, only: [:index, :show, :new, :create]
+
     get "/", PageController, :index
   end
+
 
   # Other scopes may use custom stacks.
   # scope "/api", TutoPhoenixWeb do
