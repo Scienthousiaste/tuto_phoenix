@@ -25,9 +25,9 @@ defmodule TutoPhoenixWeb.Router do
   scope "/", TutoPhoenixWeb do
     pipe_through :browser
 
-    resources "/championships", ChampionshipController, only: [:index, :show, :edit, :new, :create]
-    resources "/trials", TrialController, only: [:index]
-    resources "/contenders", ContenderController, only: [:index]
+    resources "/championships", ChampionshipController, only: [:index, :show, :new, :create]
+    resources "/trials", TrialController, only: [:index, :show, :new, :create]
+    resources "/contenders", ContenderController, only: [:index, :show, :new, :create]
 
     get "/", PageController, :index
   end

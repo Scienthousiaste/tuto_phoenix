@@ -3,7 +3,6 @@ defmodule TutoPhoenixWeb.ChampionshipController do
   alias TutoPhoenix.Schemas.Championship
   alias TutoPhoenix.SchemaContexts.Championships
 
-  @spec new(Plug.Conn.t(), any) :: Plug.Conn.t()
   def new(conn, _params) do
     changeset = Championship.changeset(%Championship{}, %{})
     render(conn, "new.html", changeset: changeset)

@@ -7,7 +7,7 @@ defmodule TutoPhoenix.Schemas.Championship do
   schema "championships" do
     field :name, :string, null: false
     field :location, :string, null: false
-    has_many :trials, TutoPhoenix.Schemas.Trial
+    has_many :trials, TutoPhoenix.Schemas.Trial, on_delete: :delete_all
   end
 
   def changeset(struct, params \\ %{}) do

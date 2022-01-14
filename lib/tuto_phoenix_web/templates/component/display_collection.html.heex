@@ -3,5 +3,9 @@
 <%= for elem <- @collection do %>
   <div>
     <%= elem.name %>
+    <%= link "View", to: view_element_link(@name, elem.id) %>
   </div>
 <% end %>
+
+<%= new_element_button(@name) %>
+<%= link "return", to: "/" %>

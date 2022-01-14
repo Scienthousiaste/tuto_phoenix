@@ -2,7 +2,7 @@ defmodule TutoPhoenix.Schemas.Trial do
   use Ecto.Schema
   import Ecto.Changeset
 
-  @required_fields [:name]
+  @required_fields [:name, :championship_id]
 
   schema "trials" do
     field :name, :string, null: false
@@ -12,7 +12,7 @@ defmodule TutoPhoenix.Schemas.Trial do
 
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:name])
+    |> cast(params, [:name, :championship_id])
     |> validate_required(@required_fields)
   end
 end

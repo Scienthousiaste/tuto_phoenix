@@ -1,5 +1,3 @@
 <h1><%= @championship.name %></h1>
 <h2><%= @championship.location %></h2>
-
-<%= button("Edit", to: Routes.championship_path(@conn, :edit, @championship.id), method: :get, class: "btn") %>
 <%= link "return", to: "/championships" %>

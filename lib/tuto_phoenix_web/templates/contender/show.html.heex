@@ -1,0 +1,12 @@
+<h1>Contender <%= @contender.name %> </h1>
+
+<%= if length(@contender.trials) > 0 do %>
+  <%= for t <- @contender.trials do %>
+    <div>
+      <%= t.name %>
+    </div>
+  <% end %>
+<% else %>
+  <p>No performance yet</p>
+<% end %>
+<%= link "return", to: "/contenders" %>

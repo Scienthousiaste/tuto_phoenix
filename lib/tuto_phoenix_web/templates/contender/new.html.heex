@@ -1,0 +1,13 @@
+<h2>New contender</h2>
+<%= if @changeset.action do %> <div class="alert alert-danger">
+    <p>Something went wrong! Please check the errors below.</p>
+  </div>
+<% end %>
+<%= form_for @changeset, Routes.contender_path(@conn, :create), fn f -> %>
+  <div>
+    <%= text_input f, :name, placeholder: "Name" %>
+    <%= error_tag f, :name %> 
+  </div>
+
+  <%= submit "Create Contender" %> 
+<% end %>
