@@ -10,6 +10,6 @@ defmodule TutoPhoenixWeb.ComponentView do
   end
 
   def new_element_button(name_elements) do
-    button("New " <> singularize(name_elements), to: name_elements<>"/new", method: :get, class: "btn")
+    button("New " <> singularize(name_elements), to: name_elements <> "/new", method: :get, class: "btn")
   end
 end

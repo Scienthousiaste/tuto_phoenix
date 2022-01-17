@@ -1,4 +1,7 @@
 defmodule TutoPhoenix.Schemas.Contender do
+  @moduledoc """
+    Championship contender
+  """
   use Ecto.Schema
   import Ecto.Changeset
 

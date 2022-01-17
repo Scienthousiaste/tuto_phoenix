@@ -1,4 +1,7 @@
 defmodule TutoPhoenix.Schemas.TrialContender do
+  @moduledoc """
+    This schema stores a performance by a contender in a specific trial
+  """
   use Ecto.Schema
 
   schema "trials_contenders" do

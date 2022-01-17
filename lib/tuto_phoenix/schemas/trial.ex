@@ -1,4 +1,7 @@
 defmodule TutoPhoenix.Schemas.Trial do
+  @moduledoc """
+    Trial of a championship
+  """
   use Ecto.Schema
   import Ecto.Changeset
 

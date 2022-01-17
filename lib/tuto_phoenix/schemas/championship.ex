@@ -1,4 +1,7 @@
 defmodule TutoPhoenix.Schemas.Championship do
+  @moduledoc """
+    Memory championships
+  """
   use Ecto.Schema
   import Ecto.Changeset
 
