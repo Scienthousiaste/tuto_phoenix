@@ -14,7 +14,6 @@ defmodule TutoPhoenixWeb.Router do
     plug :accepts, ["json"]
   end
 
-
   # scope "/championships", TutoPhoenixWeb do
   #   pipe_through :browser
 
@@ -31,7 +30,6 @@ defmodule TutoPhoenixWeb.Router do
 
     get "/", PageController, :index
   end
-
 
   # Other scopes may use custom stacks.
   # scope "/api", TutoPhoenixWeb do

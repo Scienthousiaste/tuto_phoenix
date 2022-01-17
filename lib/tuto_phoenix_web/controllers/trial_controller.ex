@@ -4,7 +4,6 @@ defmodule TutoPhoenixWeb.TrialController do
   alias TutoPhoenix.SchemaContexts.Trials
   alias TutoPhoenix.Repo
 
-
   def render_new_with_championships(conn, changeset) do
     championships = Repo.all(TutoPhoenix.Schemas.Championship)
     render(conn, "new.html", changeset: changeset, championships: championships)
@@ -21,17 +20,21 @@ defmodule TutoPhoenixWeb.TrialController do
   end
 
   def show(conn, %{"id" => id}) do
-    trial = Trials.get(id)
+    trial =
+      Trials.get(id)
       |> Trials.preload([:championship])
+
     render(conn, "show.html", trial: trial)
   end
 
   def create(conn, %{"trial" => trial_params}) do
     case Trials.create(trial_params) do
-      {:ok, trial} -> conn
+      {:ok, trial} ->
+        conn
         |> put_flash(:info, "#{trial.name} created!")
         |> redirect(to: Routes.trial_path(conn, :index))
-      {:error,  %Ecto.Changeset{} = changeset} ->
+
+      {:error, %Ecto.Changeset{} = changeset} ->
         render_new_with_championships(conn, changeset)
     end
   end

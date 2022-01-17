@@ -20,12 +20,13 @@ defmodule TutoPhoenixWeb.ChampionshipController do
 
   def create(conn, %{"championship" => championship_params}) do
     case Championships.create(championship_params) do
-      {:ok, championship} -> conn
+      {:ok, championship} ->
+        conn
         |> put_flash(:info, "#{championship.name} created!")
         |> redirect(to: Routes.championship_path(conn, :index))
-      {:error,  %Ecto.Changeset{} = changeset} ->
+
+      {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
   end
-
 end

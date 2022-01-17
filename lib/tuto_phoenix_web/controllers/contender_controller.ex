@@ -15,19 +15,22 @@ defmodule TutoPhoenixWeb.ContenderController do
 
   @spec show(Plug.Conn.t(), map) :: Plug.Conn.t()
   def show(conn, %{"id" => id}) do
-    contender = Contenders.get(id)
+    contender =
+      Contenders.get(id)
       |> Contenders.preload([:trials])
+
     render(conn, "show.html", contender: contender)
   end
 
   def create(conn, %{"contender" => contender_params}) do
     case Contenders.create(contender_params) do
-      {:ok, contender} -> conn
+      {:ok, contender} ->
+        conn
         |> put_flash(:info, "#{contender.name} created!")
         |> redirect(to: Routes.contender_path(conn, :index))
-      {:error,  %Ecto.Changeset{} = changeset} ->
+
+      {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
   end
-
 end

@@ -4,5 +4,4 @@ defmodule TutoPhoenix.Repo.Migrations.AddIndexToTrials do
   def change do
     create index(:trials, [:championship_id])
   end
-
 end

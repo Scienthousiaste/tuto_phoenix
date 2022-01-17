@@ -7,5 +7,4 @@ defmodule TutoPhoenix.Repo.Migrations.CreateChampionships do
       add :location, :string
     end
   end
-
 end

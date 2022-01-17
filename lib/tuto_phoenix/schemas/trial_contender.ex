@@ -10,5 +10,4 @@ defmodule TutoPhoenix.Schemas.TrialContender do
     belongs_to :trials, TutoPhoenix.Schemas.Trial
     belongs_to :contenders, TutoPhoenix.Schemas.Contender
   end
-
 end

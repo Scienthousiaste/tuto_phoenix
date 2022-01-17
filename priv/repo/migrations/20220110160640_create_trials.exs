@@ -7,5 +7,4 @@ defmodule TutoPhoenix.Repo.Migrations.CreateTrials do
       add :championship_id, references(:championships)
     end
   end
-
 end
